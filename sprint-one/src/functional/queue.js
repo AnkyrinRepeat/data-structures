@@ -14,22 +14,22 @@ var Queue = function(){
   };
 
   someInstance.dequeue = function(){
-    var temp = this['1'];
-    delete this['1'];
-    for (var key in this) {
-      if (typeof this[key] !== 'function') {
-        this[key-1] = this[key];
+    var temp = someInstance['1'];
+    delete someInstance['1'];
+    for (var key in someInstance) {
+      if (typeof someInstance[key] !== 'function') {
+        someInstance[key-1] = someInstance[key];
       }
     }
-    delete this[this.size()];
+    delete someInstance[someInstance.size()];
+    return temp;
   };
 
   someInstance.size = function(){
     var counter = 0;
-    for (var key in this) {
-      if (typeof this[key] !== 'function') {
+    for (var key in someInstance) {
+      if (typeof someInstance[key] !== 'function') {
         counter += 1;
-        console.log(key);
       }
     }
     return counter;
