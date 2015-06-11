@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+    <script src="../lib/jquery/jquery.js"></script>
+    <script src="../lib/underscore/underscore.js"></script>
+    <script src="../lib/moment.js"></script>
+    <script src="src/pseudoclassical/stack.js"></script>
+    <script>
+      $(function(){
+        var before = moment();
+        for (var i = 0; i < 100000000; i++) {
+          var test = new Stack();
+        }
+        var after = moment();
+        var timeElapsed = after.diff(before);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Stack() took '+timeElapsed+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <title>Awesome Instantiation Tester</title>
+</head>
+
+<body>
+</body>
+</html>
+
+
