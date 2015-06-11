@@ -4,20 +4,116 @@
 
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="ExtraCreditStyles.css">
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../lib/underscore/underscore.js"></script>
     <script src="../lib/moment.js"></script>
-    <script src="src/pseudoclassical/stack.js"></script>
+    <script src="src/Extra Credit Source.js"></script>
     <script>
       $(function(){
-        var before = moment();
-        for (var i = 0; i < 100000000; i++) {
-          var test = new Stack();
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = functionalStack();
         }
-        var after = moment();
-        var timeElapsed = after.diff(before);
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
         var $timeResult = $('<div></div>')
-        $timeResult.text('Stack() took '+timeElapsed+' milliseconds');
+        $timeResult.text('Functional Stack() took '+stackTime+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+
+    <script>
+      $(function(){
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = functionalSharedStack();
+        }
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Functional Shared Stack() took '+stackTime+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+
+    <script>
+      $(function(){
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = prototypalStack();
+        }
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Prototypal Stack() took '+stackTime+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+
+    <script>
+      $(function(){
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = new pseudoclassicalStack();
+        }
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Pseudoclassical Stack() took '+stackTime+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+
+    <script>
+        $(function(){
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = functionalQueue();
+        }
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Functional Queue() took '+stackTime+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+    <script>
+      $(function(){
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = functionalSharedQueue();
+        }
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Functional Shared Queue() took '+stackTime+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+    <script>
+      $(function(){
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = prototypalQueue();
+        }
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Prototypal Queue() took '+stackTime+' milliseconds');
+        $timeResult.appendTo(document.body)
+      })
+    </script>
+    <script>
+      $(function(){
+        var stackBefore = moment();
+        for (var i = 0; i < 100000; i++) {
+          var stackTest = new pseudoclassicalQueue();
+        }
+        var stackAfter = moment();
+        var stackTime = stackAfter.diff(stackBefore);
+        var $timeResult = $('<div></div>')
+        $timeResult.text('Pseudoclassical Queue() took '+stackTime+' milliseconds');
         $timeResult.appendTo(document.body)
       })
     </script>

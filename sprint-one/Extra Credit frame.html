@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script>
+      var stackBefore = moment();
+      for (var i = 0; i < 100000000; i++) {
+        var stackTest = new Stack();
+      }
+      var stackAfter = moment();
+      var stackTime = stackAfter.diff(stackBefore);
+
+      var queueBefore = moment();
+      for (var i = 0; i < 100000000; i++) {
+        var queueTest = new Queue();
+      }
+      var queueAfter = moment();
+      var queueTime = queueAfter.diff(queueBefore);
+
+      var $result = $('<div></div>')
+      $result.text(''+variant+' Stack() took '+stackTime+' milliseconds');
+      $result.text(''+variant+' Queue() took '+queueTime+' milliseconds');
+      $result.appendTo(document.body)
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
