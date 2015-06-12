@@ -51,5 +51,15 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
+  it('head and tail should point to null if the last head is removed', function(){
+    linkedList.addToTail(4);
+    linkedList.removeHead();
+    expect(linkedList.head && linkedList.tail).to.equal(null);
+  });
+
+  it('should return null on an empty list', function(){
+    expect(linkedList.removeHead()).to.equal(null);
+  });
+
   // add more tests here to test the functionality of linkedList
 });
