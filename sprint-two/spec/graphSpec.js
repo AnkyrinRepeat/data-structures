@@ -20,6 +20,12 @@ describe('graph', function() {
     expect(graph.contains('kittens')).to.equal(true);
   });
 
+  it('should not store values that were not inserted', function() {
+    graph.addNode('kittens');
+    expect(graph.contains('puppies')).to.equal(false);
+  });
+
+
   it('should remove nodes that were inserted', function() {
     graph.addNode('puppies');
     expect(graph.contains('puppies')).to.equal(true);
