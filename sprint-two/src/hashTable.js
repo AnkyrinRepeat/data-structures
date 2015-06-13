@@ -15,7 +15,6 @@ HashTable.prototype.insert = function(k, v){
   }
 
 
-  // if alreadyThere == undefined, then tempToAdd = [k,v]
   this._storage.set(i, tempToAdd);
 };
 
@@ -52,6 +51,14 @@ HashTable.prototype.remove = function(k){
   this._storage.set(i, bucket);
 };
 
+// HastTable.prototype.checkSize = function() {
+//   var holder = [];
+//   this._.storage_.each(function(val, i, storage) {
+//     holder.push([val])
+//   })
+//   if holder.length > (this._limit*this._limit)
+
+// }
 
 /*
  * Complexity: What is the time complexity of the above functions?
