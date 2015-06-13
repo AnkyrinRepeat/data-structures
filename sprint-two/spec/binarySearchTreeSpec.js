@@ -11,6 +11,11 @@ describe('binarySearchTree', function() {
     expect(binarySearchTree.depthFirstLog).to.be.a("function");
   });
 
+  it('should insert a single node', function() {
+    binarySearchTree.insert(7);
+    expect(binarySearchTree.right.value).to.equal(7);
+  });
+
   it('should insert values at the correct location in the tree', function(){
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
